@@ -1,0 +1,6 @@
+# First, ignore everything
+#~/*
+# Now, whitelist only the file you're interested in.
+#!~/*.bashrc
+#!~/*.profile
+#.amazon_aws
