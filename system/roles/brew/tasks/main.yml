@@ -1,0 +1,25 @@
+---
+- name: Install packages from Homebrew
+  homebrew:
+    state: present
+    name:
+      - fzf
+      - jq
+      - python
+      - python3
+
+- name: Install Brew Cask packages
+  ignore_errors: yes
+  homebrew_cask:
+    state: present
+    name:
+      - alfred
+      - docker
+      - firefox
+      - google-chrome
+      - iterm2
+      - licecap
+      - sequel-pro
+      - slack
+      - spotify
+      - whatsapp

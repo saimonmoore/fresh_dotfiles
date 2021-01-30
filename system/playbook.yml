@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  roles:
+    - base
+    - editor
+    - asdf
+    - db
+
+- hosts: os_Darwin
+  roles:
+    - brew
+    - mac

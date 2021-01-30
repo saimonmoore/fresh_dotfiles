@@ -1,0 +1,7 @@
+- name: Install editor packages
+  package:
+    name:
+    - tmux
+    - screen
+    - exuberant-ctags
+  state: present
