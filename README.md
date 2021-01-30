@@ -3,7 +3,7 @@
 ## Installation
 
 ``` sh
-FRESH_LOCAL_SOURCE=saimonmoore/dotfiles bash <(curl -sL get.freshshell.com)
+FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com)
 ```
 
 My dotfiles are managed by [fresh].
