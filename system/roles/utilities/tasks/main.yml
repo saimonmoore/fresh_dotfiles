@@ -10,3 +10,8 @@
     - albert
   state: present
 
+- name: Install snaps
+  community.general.snap:
+    name:
+      - insomnia # REST client
+      - dbeaver-ce # sql client

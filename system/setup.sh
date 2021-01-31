@@ -13,7 +13,9 @@ function install_ansible() {
 }
 
 function install_ansible_plugins() {
+  ansible-galaxy collection install community.general
   ansible-galaxy install cimon-io.asdf
+  ansible-galaxy install darkwizard242.googlechrome
 }
 
 which ansible-playbook > /dev/null

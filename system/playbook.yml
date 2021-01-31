@@ -15,3 +15,6 @@
   roles:
     - brew
     - mac
+    - darkwizard242.googlechrome
+  vars:
+    googlechrome_desired_state: latest
