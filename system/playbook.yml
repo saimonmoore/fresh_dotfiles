@@ -7,6 +7,10 @@
     - asdf
     - db
 
+- hosts: os_Linux
+  roles:
+    - utilities
+
 - hosts: os_Darwin
   roles:
     - brew
