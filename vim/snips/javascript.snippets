@@ -1,0 +1,32 @@
+snippet desc "jest describe ()=>{}" b
+  describe('$1', () => {
+    $2
+  });
+endsnippet
+	
+snippet ctxt "jest context ()=>{}" b
+  context('$1', () => {
+    $2
+  });
+endsnippet
+
+snippet itc "jest it ()=>{}" b
+  it('$1', () => {
+    $2
+  });
+endsnippet
+
+snippet ita "jest it async()=>{}" b
+  it('$1', async () => {
+    $2
+  });
+endsnippet
+
+snippet beforeEach "jest beforeEach()=>{}" b
+  beforeEach(() => {$1});
+endsnippet
+
+snippet afterEach "jest afterEach()=>{}" b
+  afterEach(() => {$1});
+endsnippet
+
