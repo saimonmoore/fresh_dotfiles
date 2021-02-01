@@ -10,11 +10,11 @@
 - hosts: os_Linux
   roles:
     - utilities
+    - darkwizard242.googlechrome
+  vars:
+    googlechrome_desired_state: latest
 
 - hosts: os_Darwin
   roles:
     - brew
     - mac
-    - darkwizard242.googlechrome
-  vars:
-    googlechrome_desired_state: latest
