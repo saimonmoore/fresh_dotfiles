@@ -30,4 +30,4 @@ fi
 install_ansible_plugins
 
 # provision machine
-ansible-playbook -i "localhost," -c local --become-method=su playbook.yml
+ansible-playbook -vvv -i "localhost," -c local --become-method=su playbook.yml
