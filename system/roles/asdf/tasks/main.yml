@@ -1,5 +1,5 @@
 - name: Install asdf + plugins
-    asdf_plugins:
+  asdf_plugins:
     - name: "node"
       versions: ["12.20.1", "14.15.4"]
       global: "12.20.1"
