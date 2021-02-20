@@ -6,8 +6,6 @@
   roles:
     - base
     - editor
-    - role: lean_delivery.mysql
-    - role: robertdebock.postgres
     - role: cimon-io.asdf
       asdf_plugins:
       - name: "node"
