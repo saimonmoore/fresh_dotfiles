@@ -26,4 +26,4 @@ if [ "$?" != "0" ]; then
 fi
 
 # provision machine
-sudo ansible-playbook -i "localhost," -c local --become-method=su playbook.yml
+ansible-playbook -i "localhost," -c local --become-method=su playbook.yml
