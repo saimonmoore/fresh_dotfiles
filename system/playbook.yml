@@ -16,7 +16,8 @@
         versions: ["3.0.0", "2.7.2", "2.6.3p62"]
         global: "2.6.3p62"
       - name: "elixir"
-        versions: "1.11.3"
+        versions: ["1.11.3"]
+        global: "1.11.3"
   vars:
     mysql_bind_address: '0.0.0.0'
     mysql_version: 5.7
