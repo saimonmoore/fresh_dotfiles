@@ -9,7 +9,7 @@
     - role: markosamuli.asdf
       asdf_init_shell: false
       asdf_plugins:
-      - name: "node"
+      - name: "nodejs"
         versions: ["12.20.1", "14.15.4"]
         global: "12.20.1"
       - name: "ruby"
