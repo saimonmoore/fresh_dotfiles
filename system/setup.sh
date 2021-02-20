@@ -25,8 +25,9 @@ which ansible-playbook > /dev/null
 
 if [ "$?" != "0" ]; then
   install_ansible
-  install_ansible_plugins
 fi
+
+install_ansible_plugins
 
 # provision machine
 ansible-playbook -i "localhost," -c local --become-method=su playbook.yml
