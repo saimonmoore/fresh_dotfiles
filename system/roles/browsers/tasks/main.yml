@@ -4,4 +4,4 @@
     - wget
     - gdebi-core
     - firefox
-  state: present
+    state: present

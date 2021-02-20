@@ -12,4 +12,4 @@
     - neovim
     - silversearcher-ag
     - exuberant-ctags
-  state: present
+    state: present

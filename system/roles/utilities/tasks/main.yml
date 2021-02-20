@@ -8,7 +8,7 @@
   package:
     name:
     - albert
-  state: present
+    state: present
 
 - name: Install snaps
   community.general.snap:
