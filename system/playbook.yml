@@ -6,6 +6,16 @@
     - editor
     - asdf
     - db
+    - role: ansible-role-asdf
+      asdf_plugins:
+      - name: "node"
+        versions: ["12.20.1", "14.15.4"]
+        global: "12.20.1"
+      - name: "ruby"
+        versions: ["3.0.0", "2.7.2", "2.6.3p62"]
+        global: "2.6.3p62"
+      - name: "elixir"
+        versions: "1.11.3"
 
 - hosts: os_Linux
   roles:
