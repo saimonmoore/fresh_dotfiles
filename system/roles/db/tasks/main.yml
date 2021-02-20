@@ -1,10 +1,10 @@
 - name: Install required dependencies
-      package:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - mysql2
-        - libmysqlclient-dev
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - mysql2
+    - libmysqlclient-dev
 
 - name: Add MySQL repository key
   apt_key:
