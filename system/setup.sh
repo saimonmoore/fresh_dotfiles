@@ -14,7 +14,7 @@ function install_ansible() {
 
 function install_ansible_plugins() {
   ansible-galaxy collection install community.general
-  ansible-galaxy install cimon-io.asdf
+  ansible-galaxy install markosamuli.asdf
   ansible-galaxy install darkwizard242.googlechrome
   ansible-galaxy install geerlingguy.docker
   ansible-galaxy install lean_delivery.mysql
