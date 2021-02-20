@@ -5,7 +5,7 @@
     - base
     - editor
     - db
-    - role: ansible-role-asdf
+    - role: cimon-io.asdf
       asdf_plugins:
       - name: "node"
         versions: ["12.20.1", "14.15.4"]
