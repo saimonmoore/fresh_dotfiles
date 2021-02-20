@@ -7,7 +7,8 @@
     - base
     - editor
     - role: markosamuli.asdf
-      asdf_init_shell: false
+      asdf_init_shell: true
+      # TODO: How to install this: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       asdf_plugins:
       - name: "nodejs"
         versions: ["12.16.1"]
