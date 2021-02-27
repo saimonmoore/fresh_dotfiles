@@ -1,6 +1,6 @@
 - name: Install snaps
   community.general.snap:
-    become: true
+    classic: yes
     name:
       - insomnia # REST client
       - dbeaver-ce # SQL client
