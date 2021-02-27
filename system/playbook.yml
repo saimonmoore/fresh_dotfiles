@@ -7,7 +7,7 @@
     - base
     - editor
     - role: markosamuli.asdf
-      become_user: {{ansible_user}}
+      become_user: "{{ansible_user}}"
       asdf_init_shell: true
       # TODO: How to install this: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       asdf_plugins:
