@@ -16,7 +16,6 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
 fresh shell/aliases/\*
 # fresh shell/functions/\*
 # fresh shell/config/\*
-fresh shell/\*
 
 fresh jasoncodes/dotfiles shell/config/\*
 
