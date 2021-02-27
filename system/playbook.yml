@@ -25,16 +25,19 @@
     mysql_version: 5.7
 
 - hosts: os_Linux
-  when: ansible_os_family == "Debian"
   roles:
-    - utilities
-    - darkwizard242.googlechrome
-    - geerlingguy.docker
+    - role: utilities
+      when: ansible_facts['os_family'] == "Debian"
+    - role: darkwizard242.googlechrome
+      when: ansible_facts['os_family'] == "Debian"
+    - role: geerlingguy.docker
+      when: ansible_facts['os_family'] == "Debian"
   vars:
     googlechrome_desired_state: latest
 
 - hosts: os_Darwin
-  when: ansible_os_family == "Darwin"
   roles:
-    - brew
-    - mac
+    - role: brew
+      when: ansible_facts['os_family'] == "Darwin"
+    - role: mac
+      when: ansible_facts['os_family'] == "Darwin"
