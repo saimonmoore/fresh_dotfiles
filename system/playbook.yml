@@ -24,7 +24,7 @@
     mysql_bind_address: '0.0.0.0'
     mysql_version: 5.7
 
-- hosts: os_Linux
+- hosts: all #linux
   roles:
     - role: utilities
       when: ansible_facts['os_family'] == "Debian"
@@ -35,7 +35,7 @@
   vars:
     googlechrome_desired_state: latest
 
-- hosts: os_Darwin
+- hosts: all # darwin
   roles:
     - role: brew
       when: ansible_facts['os_family'] == "Darwin"
