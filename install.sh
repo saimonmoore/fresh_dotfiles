@@ -8,9 +8,6 @@ cd dotfiles/system
 echo "info: Provisioning machine"
 ./setup.sh
 
-echo "info: Setting up TPM"
-rm -fr ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 echo "info: Installing nvm"
 rm -fr ~/.nvm
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
