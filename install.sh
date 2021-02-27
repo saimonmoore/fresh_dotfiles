@@ -33,6 +33,9 @@ echo "info: Installation complete! Now open up a new shell and complete post-ins
 
 echo "info: Install node:"
 echo "nvm install node"
+echo "nvm use node"
+echo "info: Install yarn:"
+echo "npm install -g yarn"
 
 echo "info: Install ruby:"
 echo "rbenv install 2.7.1"
