@@ -25,6 +25,7 @@
     mysql_version: 5.7
 
 - hosts: os_Linux
+  when: ansible_os_family == "Debian"
   roles:
     - utilities
     - darkwizard242.googlechrome
@@ -33,6 +34,7 @@
     googlechrome_desired_state: latest
 
 - hosts: os_Darwin
+  when: ansible_os_family == "Darwin"
   roles:
     - brew
     - mac
