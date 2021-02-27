@@ -21,7 +21,7 @@ fresh jasoncodes/dotfiles shell/config/\*
 
 fresh config/\* --file
 
-fresh bin/\* --bin
+# fresh bin/\* --bin
 
 fresh vim --file=~/.config/nvim/
 
