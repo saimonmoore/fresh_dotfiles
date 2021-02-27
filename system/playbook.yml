@@ -7,8 +7,8 @@
     - base
     - editor
     - role: markosamuli.asdf
-      become_user: "{{lookup('env', 'USER')}}"
       asdf_init_shell: true
+      asdf_user: "{{lookup('env', 'USER')}}"
       # TODO: How to install this: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       asdf_plugins:
       - name: "nodejs"
