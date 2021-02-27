@@ -11,9 +11,9 @@
       asdf_user: "{{lookup('env', 'USER')}}"
       # TODO: How to install this: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
       asdf_plugins:
-      - name: "nodejs"
-        versions: ["12.16.1"]
-        global: "12.20.1"
+     #- name: "nodejs"
+     #  versions: ["12.16.1"]
+     #  global: "12.20.1"
       - name: "ruby"
         versions: ["3.0.0", "2.7.2", "2.6.3"]
         global: "2.6.3"
