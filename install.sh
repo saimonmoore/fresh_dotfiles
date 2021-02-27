@@ -13,7 +13,7 @@ rm -fr ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.t
 
 echo "info: Installing nvm"
 rm -fr ~/.nvm
-git clone https://github.com/nvm-sh/nvm.git .nvm
+git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 cd ~/.nvm && git checkout v0.37.2
 . ./nvm.sh
 cd -
@@ -25,7 +25,8 @@ then
 fi
 
 echo "info: Setting up dotfiles via fresh"
-rm -fr ~/.freshrc && ~/.fresh && ~/.dotfiles && rm -fr ~/.config/nvim && FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com)
+rm -fr ~/.freshrc && rm -fr ~/.fresh && rm -fr  ~/.dotfiles && rm -fr ~/.config/nvim
+FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com)
 grep fresh ~/.bashrc || echo "source ~/.fresh/build/shell.sh" >> ~/.bashrc
 
 echo "info: Installation complete! Now open up a new shell and complete post-installation tasks:"
