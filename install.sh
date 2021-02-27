@@ -23,6 +23,6 @@ echo "run: In tmux, hit prefix + I to install plugins"
 
 echo "info: Install all vim plugins"
 sh -c "curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-echo "run: In nvim, hit :PluginInstall to install plugins"
+echo "run: In nvim, hit :PluginInstall and :UpdateRemotePlugins to install plugins"
 
 
