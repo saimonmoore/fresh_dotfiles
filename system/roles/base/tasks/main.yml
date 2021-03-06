@@ -6,4 +6,5 @@
     - exuberant-ctags
     - kitty
     - jq
+    - keychain
     state: present
