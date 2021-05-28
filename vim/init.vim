@@ -76,7 +76,7 @@ call plug#begin()
   Plug 'sheerun/vim-polyglot'
   Plug 'powerman/vim-plugin-AnsiEsc'
   Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+  Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
   Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
   Plug 'ianks/vim-tsx'
