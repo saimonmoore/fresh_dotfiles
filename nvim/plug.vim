@@ -4,9 +4,13 @@ endif
 
 call plug#begin()
 
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " :G
 Plug 'tpope/vim-rhubarb'
-Plug 'cohama/lexima.vim'
+Plug 'tpope/vim-commentary' " gc to comment selection, gcc to comment line
+Plug 'tpope/vim-surround' " cs{current}{new} to change, ds{c}{n} to delete, cst (for tags)
+Plug 'tpope/vim-repeat'
+Plug 'FooSoft/vim-argwrap' " leader -a to wrap/unwrap args
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " ctrl-n to select, tab to toggle cursor/extended mode
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -30,4 +34,3 @@ Plug 'honza/vim-snippets'
 Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 
 call plug#end()
-
