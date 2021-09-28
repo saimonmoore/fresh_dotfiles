@@ -11,7 +11,7 @@ echo "info: Provisioning machine"
 echo "info: Installing nvm"
 rm -fr ~/.nvm
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
-cd ~/.nvm && git checkout v0.37.2
+cd ~/.nvm && git checkout v0.38.0
 . ./nvm.sh
 cd -
 
