@@ -21,6 +21,12 @@ then
   curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 fi
 
+echo "info: Installing zoxide"
+if command -v zoxide &> /dev/null
+then
+  curl -sS https://webinstall.dev/zoxide | bash
+fi
+
 echo "info: Setting up dotfiles via fresh"
 rm -fr ~/.freshrc && rm -fr ~/.fresh && rm -fr  ~/.dotfiles && rm -fr ~/.config/nvim
 FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com)
