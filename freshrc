@@ -23,5 +23,5 @@ fresh config/\* --file
 
 # fresh bin/\* --bin
 
-fresh vim --file=~/.config/nvim/
+fresh nvim --file=~/.config/nvim/
 
