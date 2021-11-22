@@ -1,12 +1,12 @@
 # nvm
 - name: nvm
   ansible.builtin.shell: >
-    curl -I -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+    curl -I -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | /bin/bash
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
 - name: rbenv
   ansible.builtin.shell: >
-    curl -IfsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+    curl -IfsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | /bin/bash
   args:
     creates: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv"
