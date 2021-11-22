@@ -6,7 +6,6 @@
   roles:
     - base
     - editor
-    - languages
   vars:
     mysql_bind_address: '0.0.0.0'
     mysql_version: 5.7
@@ -30,3 +29,7 @@
       when: ansible_facts['os_family'] == "Darwin"
     - role: mac
       when: ansible_facts['os_family'] == "Darwin"
+
+- hosts: all
+  roles:
+    - languages

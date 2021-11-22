@@ -1,12 +1,39 @@
 # nvm
-- name: nvm
-  ansible.builtin.shell: >
-    curl -I -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | /bin/bash
+- name: Get_nvm_install_script
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+    dest: "{{ ansible_user_dir }}/nvm_install.sh"
+    force: true
+- name: Install_or_update_nvm
+  command: bash {{ ansible_user_dir }}/nvm_install.sh
   args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+    creates: "{{ ansible_user_dir }}/.nvm/nvm.sh"
+- name: Install_nodejs_lts_erbium_v12
+  tags: Install_nodejs
+  shell: >
+    source {{ ansible_user_dir }}/.nvm/nvm.sh;
+    nvm install lts/erbium
+  args:
+    executable: /bin/bash
+- name: Install_nodejs_lts_fermium_v14
+  shell: >
+    source {{ ansible_user_dir }}/.nvm/nvm.sh;
+    nvm install lts/fermium
+  args:
+    executable: /bin/bash
 
-- name: rbenv
-  ansible.builtin.shell: >
-    curl -IfsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | /bin/bash
+- name: Get_rbenv_install_script
+  get_url:
+    url: https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer
+    dest: "{{ ansible_user_dir }}/rbenv_install.sh"
+    force: true
+- name: Install_or_update_rbenv
+  command: bash {{ ansible_user_dir }}/rbenv_install.sh
   args:
     creates: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv"
+- name: Install_ruby_2.7.4
+  shell: >
+    {{ ansible_user_dir }}/.rbenv/bin/rbenv init;
+    {{ ansible_user_dir }}/.rbenv/bin/rbenv install 2.7.4
+  args:
+    executable: /bin/bash
