@@ -2,7 +2,7 @@
 
 echo "info: Cloning repository"
 cd /tmp
-git clone git@github.com:saimonmoore/fresh_dotfiles.git dotfiles
+git clone https://github.com/saimonmoore/fresh_dotfiles.git dotfiles
 cd dotfiles/system
 
 echo "info: Provisioning machine"
