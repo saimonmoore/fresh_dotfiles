@@ -13,6 +13,22 @@ Plug 'FooSoft/vim-argwrap' " leader -a to wrap/unwrap args
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " ctrl-n to select, tab to toggle cursor/extended mode
 
 if has("nvim")
+  function! InstallLSPDependencies(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.force
+      !npm install -g diagnostic-languageserver
+      !npm install -g neovim
+      !npm install -g tree-sitter-cli
+      !npm install -g typescript
+      !npm install -g typescript-language-server
+      !gem install neovim
+      !gem install solargraph
+    endif
+  endfunction
+
   Plug 'hoob3rt/lualine.nvim'
   Plug 'kristijanhusak/defx-git'
   Plug 'kristijanhusak/defx-icons'
@@ -25,7 +41,7 @@ if has("nvim")
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'do': function('InstallLSPDependencies') }
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
