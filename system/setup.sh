@@ -13,7 +13,7 @@ function install_ansible() {
 }
 
 function install_ansible_plugins() {
-  ansible-galaxy collection install community.general
+  ansible-galaxy collection install --force community.general
   ansible-galaxy install markosamuli.asdf
   ansible-galaxy install darkwizard242.googlechrome
   # ansible-galaxy install lean_delivery.mysql
