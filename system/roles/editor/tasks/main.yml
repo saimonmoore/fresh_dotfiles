@@ -16,9 +16,9 @@
 
 - name: neovim
   ansible.builtin.shell: >
-    curl -I -o- https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage
-    chmod u+x nvim.appimage
-    mv nvim.appimage /usr/local/bin
-    ln -nfs /usr/local/bin/nvim.appimage /usr/local/bin/nvim
+    curl -I -o- https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage;
+    chmod u+x nvim.appimage;
+    mv nvim.appimage /usr/local/bin;
+    ln -nfs /usr/local/bin/nvim.appimage /usr/local/bin/nvim;
   args:
     creates: "/usr/local/nvim"

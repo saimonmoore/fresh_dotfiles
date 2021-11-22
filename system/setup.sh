@@ -3,10 +3,9 @@
 function install_ansible() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt update
-    sudo apt install software-properties-common
+    sudo apt -y install software-properties-common
     sudo apt-add-repository --yes --update ppa:ansible/ansible
-    sudo add-apt-repository ppa:neovim-ppa/unstable
-    sudo apt install ansible
+    sudo apt -y install ansible
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install ansible
