@@ -10,15 +10,29 @@ echo "info: Provisioning machine"
 
 echo "info: Installing nvm"
 rm -fr ~/.nvm
-git clone https://github.com/nvm-sh/nvm.git ~/.nvm
-cd ~/.nvm && git checkout v0.38.0
-. ./nvm.sh
-cd -
+if [ ! -d "$HOME/.nvm" ]
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+  cd ~/.nvm
+  . ./nvm.sh
+  cd -
+  declare -a nodeVersions=("lts/erbium" "lts/ferbium")
+  for version in "${nodeVersions[@]}"
+  do
+     nvm install $version
+     npm install -g yarn
+  done
+fi
 
 echo "info: Installing rbenv"
 if [ ! -d "$HOME/.rbenv" ]
 then
   curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+  if ! grep -q rbenv ~/.bash_profile; then
+    echo 'export PATH=$PATH:~/.rbenv/bin' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    eval "$(rbenv init -)"
+    rbenv install ruby 2.7.4
+  fi
 fi
 
 echo "info: Installing zoxide"
@@ -32,20 +46,11 @@ rm -fr ~/.freshrc && rm -fr ~/.fresh && rm -fr  ~/.dotfiles && rm -fr ~/.config/
 FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com)
 grep fresh ~/.bashrc || echo "source ~/.fresh/build/shell.sh" >> ~/.bashrc
 
+echo "info: Ensure node + ruby are installed and then install all vim plugins"
+sh -c "curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+nvim +PlugInstall +UpdateRemotePlugins +qall --headless
+
 echo "info: Installation complete! Now open up a new shell and complete post-installation tasks:"
-
-echo "info: Install node:"
-echo "nvm install node"
-echo "nvm use node"
-echo "info: Install yarn:"
-echo "npm install -g yarn"
-
-echo "info: Install ruby:"
-echo "rbenv install 2.7.1"
 
 echo "info: Install all tmux plugins"
 echo "run: In tmux, hit prefix + I to install plugins"
-
-echo "info: Ensure node + ruby are installed and then install all vim plugins"
-sh -c "curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-echo "run: In nvim, hit :PluginInstall and :UpdateRemotePlugins to install plugins"
