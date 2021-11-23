@@ -26,6 +26,7 @@ if has("nvim")
       !npm install -g typescript-language-server
       !gem install neovim
       !gem install solargraph
+      !pip install neovim
     endif
   endfunction
 

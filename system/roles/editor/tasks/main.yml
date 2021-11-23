@@ -12,13 +12,18 @@
     - exuberant-ctags
     - ripgrep
     - fd-find
+    - git 
+    - curl
+    - autoconf
+    - libssl-dev
     state: present
 
 - name: neovim
   ansible.builtin.shell: >
-    curl -I -o /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage;
+    curl -L -o /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage;
     chmod u+x /tmp/nvim.appimage;
     mv /tmp/nvim.appimage /usr/local/bin/;
+    chmod a+x /usr/local/bin/nvim.appimage;
     ln -nfs /usr/local/bin/nvim.appimage /usr/local/bin/nvim;
   args:
     creates: "/usr/local/nvim"
