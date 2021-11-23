@@ -31,9 +31,3 @@
   command: bash {{ ansible_user_dir }}/rbenv_install.sh
   args:
     creates: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv"
-- name: Install_ruby_2.7.4
-  shell: >
-    {{ ansible_user_dir }}/.rbenv/bin/rbenv init;
-    {{ ansible_user_dir }}/.rbenv/bin/rbenv install 2.7.4
-  args:
-    executable: /bin/bash

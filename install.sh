@@ -8,36 +8,22 @@ cd dotfiles/system
 echo "info: Provisioning machine"
 ./setup.sh
 
-# echo "info: Installing nvm"
-# if [ ! -d "$HOME/.nvm" ]
-#   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-#   cd ~/.nvm
-#   . ./nvm.sh
-#   cd -
-#   declare -a nodeVersions=("lts/erbium" "lts/ferbium")
-#   for version in "${nodeVersions[@]}"
-#   do
-#      nvm install $version
-#      npm install -g yarn
-#   done
-# fi
-
-# echo "info: Installing rbenv"
-# if [ ! -d "$HOME/.rbenv" ]
-# then
-#   curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-#   if ! grep -q rbenv ~/.bash_profile; then
-#     echo 'export PATH=$PATH:~/.rbenv/bin' >> ~/.bash_profile
-#     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-#     eval "$(rbenv init -)"
-#     rbenv install ruby 2.7.4
-#   fi
-# fi
-
 # echo "info: Installing zoxide"
 # if command -v zoxide &> /dev/null
 # then
 #   curl -sS https://webinstall.dev/zoxide | bash
+# fi
+
+# echo "info: Sourcing nvm"
+# cd ~/.nvm
+# . ./nvm.sh
+
+# echo "info: Installing ruby 2.7.x"
+# eval "$(rbenv init -)"
+# if ! ruby --version | grep 2.7; then
+# then
+#   eval "$(rbenv init -)"
+#   rbenv install ruby 2.7.4
 # fi
 
 # echo "info: Setting up dotfiles via fresh"
