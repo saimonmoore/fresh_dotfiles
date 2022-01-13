@@ -1,24 +1,14 @@
 ---
 
 - hosts: all
-  become: yes
-  become_method: sudo
   roles:
+    - base
     - editor
   vars:
     mysql_bind_address: '0.0.0.0'
     mysql_version: 5.7
 
-- hosts: all
-  roles:
-    - base
-  vars:
-    mysql_bind_address: '0.0.0.0'
-    mysql_version: 5.7
-
 - hosts: all #linux
-  become: yes
-  become_method: sudo
   roles:
     # - role: utilities
     #   when: ansible_facts['os_family'] == "Debian"
@@ -30,12 +20,6 @@
 - hosts: all # darwin
   roles:
     - role: brew
-      when: ansible_facts['os_family'] == "Darwin"
-
-- hosts: all # darwin
-  become: yes
-  become_method: sudo
-  roles:
     - role: mac
       when: ansible_facts['os_family'] == "Darwin"
 

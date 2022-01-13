@@ -26,4 +26,4 @@
     chmod a+x /usr/local/bin/nvim.appimage;
     ln -nfs /usr/local/bin/nvim.appimage /usr/local/bin/nvim;
   args:
-    creates: "/usr/local/nvim"
+    creates: "/usr/local/bin/nvim"
