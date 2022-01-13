@@ -23,7 +23,7 @@
 
 - hosts: all # darwin
   become: no
-  become_method: sudo
+#  become_method: sudo
   roles:
     - role: brew
       when: ansible_facts['os_family'] == "Darwin"
