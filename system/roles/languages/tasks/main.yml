@@ -30,4 +30,4 @@
 - name: Install_or_update_rbenv
   command: bash {{ ansible_user_dir }}/rbenv_install.sh
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv"
+    creates: "/usr/local/bin/rbenv"
