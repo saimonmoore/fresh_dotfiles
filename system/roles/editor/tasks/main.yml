@@ -9,7 +9,6 @@
     - python3-pip
     - vim
     - silversearcher-ag
-    - exuberant-ctags
     - ripgrep
     - fd-find
     - git 

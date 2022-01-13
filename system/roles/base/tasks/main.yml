@@ -3,7 +3,6 @@
     name:
     - tmux
     - screen
-    - exuberant-ctags
     - kitty
     - jq
     - keychain
