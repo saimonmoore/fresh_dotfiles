@@ -5,9 +5,9 @@
     name:
       - fzf
       - jq
-      - python
-      - python3
       - coreutils
+#     - python
+#     - python3
 
 - name: Install Brew Cask packages
   ignore_errors: true
