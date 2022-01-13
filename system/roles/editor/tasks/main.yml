@@ -1,7 +1,6 @@
 - name: Install editor packages
   package:
     name:
-    - build-essential
     - python
     - python-dev
     - python3
@@ -14,7 +13,6 @@
     - git 
     - curl
     - autoconf
-    - libssl-dev
     state: present
 
 - name: neovim
