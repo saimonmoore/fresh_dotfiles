@@ -22,11 +22,16 @@
     googlechrome_desired_state: latest
 
 - hosts: all # darwin
-  become: yes
+  become: no
   become_method: sudo
   roles:
     - role: brew
       when: ansible_facts['os_family'] == "Darwin"
+
+- hosts: all # darwin
+  become: yes
+  become_method: sudo
+  roles:
     - role: mac
       when: ansible_facts['os_family'] == "Darwin"
 
