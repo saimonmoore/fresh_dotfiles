@@ -3,7 +3,6 @@
     name:
     - tmux
     - screen
-    - kitty
     - jq
     - keychain
     state: present
