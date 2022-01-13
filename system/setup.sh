@@ -29,4 +29,5 @@ fi
 install_ansible_plugins
 
 # provision machine
+# For passwordless sudo: https://code-maven.com/enable-ansible-passwordless-sudo
 ansible-playbook -i "localhost," --ask-become-pass -c local -u saimon --become-method=su playbook.yml
