@@ -29,4 +29,4 @@ fi
 install_ansible_plugins
 
 # provision machine
-ansible-playbook -i "localhost," -c local -u saimon --become-method=su playbook.yml
+ansible-playbook -i "localhost," --ask-become-pass -c local -u saimon --become-method=su playbook.yml
