@@ -10,8 +10,8 @@
 
 - hosts: all #linux
   roles:
-    # - role: utilities
-    #   when: ansible_facts['os_family'] == "Debian"
+    - role: ubuntu
+      when: ansible_facts['os_family'] == "Debian"
     - role: darkwizard242.googlechrome
       when: ansible_facts['os_family'] == "Debian"
   vars:
@@ -20,6 +20,7 @@
 - hosts: all # darwin
   roles:
     - role: brew
+      when: ansible_facts['os_family'] == "Darwin"
     - role: mac
       when: ansible_facts['os_family'] == "Darwin"
 

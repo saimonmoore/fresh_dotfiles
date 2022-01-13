@@ -8,6 +8,12 @@
       - coreutils
       - python
       - python3
+      - vim
+      - the_silver_searcher
+      - ripgrep
+      - fd
+      - git 
+      - curl
 
 - name: Install Brew Cask packages
   ignore_errors: true

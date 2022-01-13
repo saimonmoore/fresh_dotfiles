@@ -1,16 +1,3 @@
-- name: Install editor packages
-  package:
-    name:
-    - python
-    - python3
-    - vim
-    - silversearcher-ag
-    - ripgrep
-    - fd-find
-    - git 
-    - curl
-    state: present
-
 - name: neovim
   ansible.builtin.shell: >
     curl -L -o /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage;
