@@ -4,8 +4,14 @@
   become: yes
   become_method: sudo
   roles:
-    - base
     - editor
+  vars:
+    mysql_bind_address: '0.0.0.0'
+    mysql_version: 5.7
+
+- hosts: all
+  roles:
+    - base
   vars:
     mysql_bind_address: '0.0.0.0'
     mysql_version: 5.7
