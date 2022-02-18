@@ -20,6 +20,8 @@ echo "info: Installing cargo"
 if ! command -v cargo &> /dev/null;
 then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  export PATH=$PATH:$HOME/.cargo/bin
+  source $HOME/.cargo/env
 fi
 
 echo "info: Installing zoxide"
