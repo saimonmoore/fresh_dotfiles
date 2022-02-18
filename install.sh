@@ -3,10 +3,24 @@
 echo "info: Cloning repository"
 cd /tmp
 git clone https://github.com/saimonmoore/fresh_dotfiles.git dotfiles
-cd dotfiles/system
 
-echo "info: Provisioning machine"
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  echo "info: Provisioning OSX machine"
+  cd dotfiles/system
+fi
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+  echo "info: Provisioning linux machine"
+  cd dotfiles/linux_system
+fi
+
 ./setup.sh
+
+echo "info: Installing rust & cargo"
+if command -v cargo &> /dev/null
+then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
+fi
 
 echo "info: Installing zoxide"
 if command -v zoxide &> /dev/null
@@ -36,11 +50,11 @@ FRESH_LOCAL_SOURCE=saimonmoore/fresh_dotfiles bash <(curl -sL get.freshshell.com
 grep fresh ~/.bashrc || echo "source ~/.fresh/build/shell.sh" >> ~/.bashrc
 source ~/.fresh/build/shell.sh
 
-echo "info: Installing nvim plugins"
-sh -c "curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-/usr/local/bin/nvim +qall --headless
-/usr/local/bin/nvim +UpdateRemotePlugins +qall --headless
-/usr/local/bin/nvim +PlugInstall +qall --headless
+echo "info: Install Lunar Vim"
+if command -v lvim &> /dev/null
+then
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+fi
 
 echo "info: Installation complete! Now open up a new shell and complete post-installation tasks:"
 

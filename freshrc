@@ -23,5 +23,6 @@ fresh config/\* --file
 
 # fresh bin/\* --bin
 
-fresh nvim --file=~/.config/nvim/
+# TODO: lvim customization
+# fresh nvim --file=~/.config/nvim/
 

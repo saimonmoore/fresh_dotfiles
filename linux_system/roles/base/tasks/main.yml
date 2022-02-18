@@ -1,0 +1,9 @@
+- name: Install base packages
+  ansible.builtin.package:
+    name:
+    - tmux
+    - screen
+    - exuberant-ctags
+    - jq
+    - keychain
+    state: present

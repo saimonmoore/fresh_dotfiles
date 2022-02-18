@@ -1,0 +1,7 @@
+- name: Install browsers & prerequisites
+  package:
+    name:
+    - wget
+    - gdebi-core
+    - firefox
+    state: present
