@@ -11,7 +11,7 @@
   become: yes
   become_method: sudo
   roles:
-    - role: utilities
+    # - role: utilities
     - role: darkwizard242.googlechrome
   vars:
     googlechrome_desired_state: latest
