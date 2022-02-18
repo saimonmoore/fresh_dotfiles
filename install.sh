@@ -16,14 +16,14 @@ fi
 
 ./setup.sh
 
-echo "info: Installing rust & cargo"
-if ! command -v cargo &> /dev/null
+echo "info: Installing cargo"
+if ! command -v cargo &> /dev/null;
 then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
 echo "info: Installing zoxide"
-if ! command -v zoxide &> /dev/null
+if ! command -v zoxide &> /dev/null;
 then
   curl -sS https://webinstall.dev/zoxide | bash
 fi
@@ -51,7 +51,7 @@ grep fresh ~/.bashrc || echo "source ~/.fresh/build/shell.sh" >> ~/.bashrc
 source ~/.fresh/build/shell.sh
 
 echo "info: Install Lunar Vim"
-if ! command -v lvim &> /dev/null
+if ! command -v lvim &> /dev/null;
 then
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 fi
